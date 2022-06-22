@@ -1,7 +1,18 @@
 # encoding: utf-8
 
-include_controls 'pgstigcheck-inspec' do
-  control 'V-72857' do
+include_controls 'crunchy-data-postgresql-stig-baseline' do
+
+  control "V-233517" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+
+  control "V-233518" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+
+  control 'V-233519' do
     desc 'The CMS standard for authentication is CMS-approved PKI certificates. 
 
     Authentication based on User ID and Password may be used only when it is not possible to employ a PKI certificate, and requires AO approval.
@@ -11,7 +22,7 @@ include_controls 'pgstigcheck-inspec' do
     PostgreSQL passwords sent in clear text format across the network are vulnerable to discovery by unauthorized users. Disclosure of passwords may easily lead to unauthorized access to the database.'
   end
 
-  control 'V-72859' do
+  control 'V-233520' do
     desc 'Authentication with a CMS-approved PKI certificate does not necessarily imply authorization to access PostgreSQL. To mitigate the risk of unauthorized access to sensitive information by entities that have been issued certificates by CMS-approved PKIs, all CMS systems, including databases, must be properly configured to implement access control policies.
 
     Successful authentication must not automatically give an entity access to an asset or security boundary. 
@@ -22,12 +33,73 @@ include_controls 'pgstigcheck-inspec' do
     This requirement is applicable to access control enforcement applications, a category that includes database management systems. If PostgreSQL does not follow applicable policy when approving access, it may be in conflict with networks or other applications in the information system. This may result in users either gaining or being denied access inappropriately and in conflict with applicable policy.'
   end
 
-  control 'V-72863' do
+  control 'V-233522' do
     impact 0.0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not applied to this system categorization in CMS ARS 3.1'
+    desc 'caveat', 'This is Not Applicable since the related security control is not applied to this system categorization in CMS ARS 3.1'
   end
 
-  control 'V-72961' do
+  control "V-233523" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+
+  control "V-233530" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+  
+  control 'V-233535' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not applied to this system categorization in CMS ARS 3.1'
+  end
+  
+  control "V-233539" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+  
+  control "V-233540" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+  
+  control "V-233541" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+  
+  control "V-233543" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+  
+  control "V-233544" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+  
+  control 'V-233545' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not applied to this system categorization in CMS ARS 3.1'
+  end
+  
+  control 'V-233546' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not applied to this system categorization in CMS ARS 3.1'
+  end
+  
+  control 'V-233547' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control "V-233550" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+  
+
+  control 'V-233569' do
     desc 'For completeness of forensic analysis, it is necessary to track who logs on to PostgreSQL.
 
     Concurrent connections by the same user from multiple workstations may be valid use of the system; or such connections may be due to improper circumvention of the requirement to use the CAC/PIV for authentication; or they may indicate unauthorized account sharing; or they may be because an account has been compromised.
@@ -35,7 +107,7 @@ include_controls 'pgstigcheck-inspec' do
     (If the fact of multiple, concurrent logons by a given user can be reliably reconstructed from the log entries for other events (logons/connections; voluntary and involuntary disconnections), then it is not mandatory to create additional log entries specifically for this.)'
   end
 
-  control 'V-72979' do
+  control 'V-233577' do
     desc 'The CMS standard for authentication is CMS-approved PKI certificates.
 
     A certificate certification path is the path from the end entity certificate to a trusted root certification authority (CA). Certification path validation is necessary for a relying party to make an informed decision regarding acceptance of an end entity certificate. Certification path validation includes checks such as certificate issuer trust, time validity and revocation status for each certificate in the certification path. Revocation status information for CA and subject certificates in a certification path is commonly provided via certificate revocation lists (CRLs) or online certificate status protocol (OCSP) responses.
@@ -43,7 +115,7 @@ include_controls 'pgstigcheck-inspec' do
     Database Management Systems that do not validate certificates by performing RFC 5280-compliant certification path validation are in danger of accepting certificates that are invalid and/or counterfeit. This could allow unauthorized access to the database.'
   end
 
-  control 'V-72983' do
+  control 'V-233580' do
     title 'PostgreSQL must provide audit record generation capability for CMS-defined auditable events within all DBMS/database components.'
     desc 'Without the capability to generate audit records, it would be difficult to establish, correlate, and investigate the events relating to an incident or identify those responsible for one. 
 
@@ -63,7 +135,7 @@ include_controls 'pgstigcheck-inspec' do
     To ensure that logging is enabled, review supplementary content APPENDIX-C for instructions on enabling logging.'
   end
 
-  control 'V-72991' do
+  control 'V-233584' do
     title 'PostgreSQL must use CMS-approved cryptography to protect classified sensitive information in accordance with the data owners requirements.'
     desc 'Use of weak or untested encryption algorithms undermines the purposes of utilizing encryption to protect data. The application must implement cryptographic modules adhering to the higher standards approved by the federal government since this provides assurance 
     they have been tested and validated.
@@ -77,29 +149,38 @@ include_controls 'pgstigcheck-inspec' do
     $ psql -c "SHOW ssl"
 
     If SSL is off, this is a finding.'
-    desc 'fix', 'Note: The following instructions use the PGDATA environment variable. See supplementary content APPENDIX-F for instructions on configuring PGDATA.
+	desc	'fix', "Note: The following instructions use the PGDATA and PGVER environment variables. See 
+	supplementary content APPENDIX-F for instructions on configuring PGDATA and APPENDIX-H for PGVER.
 
-    To configure PostgreSQL to use SSL, as a database administrator (shown here as "postgres"), edit postgresql.conf:
+	To configure PostgreSQL to use SSL as a database administrator (shown here as \"postgres\"), edit postgresql.conf:
 
-    $ sudo su - postgres
-    $ vi ${PGDATA?}/postgresql.conf
+	$ sudo su - postgres
+	$ vi ${PGDATA?}/postgresql.conf
 
-    Add the following parameter:
+	Add the following parameter:
 
-    ssl = on
+	ssl = on
 
-    Now, as the system administrator, reload the server with the new configuration:
+	Next, as the system administrator, reload the server with the new configuration:
 
-    # SYSTEMD SERVER ONLY
-    $ sudo systemctl reload postgresql-9.5
+	$ sudo systemctl reload postgresql-${PGVER?}
 
-    # INITD SERVER ONLY
-    $ sudo service postgresql-9.5 reload
+	For more information on configuring PostgreSQL to use SSL, see supplementary content APPENDIX-G.
 
-    For more information on configuring PostgreSQL to use SSL, see supplementary content APPENDIX-G.'
+	Deploy CMS-approved encrypting devices to protect the server on the network."
   end
 
-  control 'V-73015' do
+  control "V-233587" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+  
+  control "V-233589" do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+  end
+  
+  control 'V-233596' do
     desc 'The CMS standard for authentication is CMS-approved PKI certificates.
          
     Authentication based on User ID and Password may be used only when it is not possible to employ a PKI certificate, and requires AO approval.
@@ -107,8 +188,20 @@ include_controls 'pgstigcheck-inspec' do
     In such cases, database passwords stored in clear text, using reversible encryption, or using unsalted hashes would be vulnerable to unauthorized disclosure. Database passwords must always be in the form of one-way, salted hashes when stored internally or externally to PostgreSQL.'
   end
 
-  control 'V-73023' do
+  control 'V-233597' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not applied to this system categorization in CMS ARS 3.1'
+  end
+  
+  control 'V-233598' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not applied to this system categorization in CMS ARS 3.1'
+  end
+  
+  control 'V-233599' do
     title 'The system must provide a warning to appropriate support staff when allocated audit record storage volume reaches 80% of maximum audit record storage capacity.'
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not applied to this system categorization in CMS ARS 3.1'
     desc 'Organizations are required to use a central log management system, so, under normal conditions, the audit space allocated to PostgreSQL on its own server will not be an issue. However, space will still be required on PostgreSQL server for audit records in transit, and, under abnormal conditions, this could fill up. Since a requirement exists to halt processing upon audit failure, a service outage would result.
 
     If support personnel are not notified immediately upon storage volume utilization reaching 80%, they are unable to plan for storage capacity expansion. 
@@ -120,28 +213,44 @@ include_controls 'pgstigcheck-inspec' do
 
     If appropriate support staff are not notified immediately upon storage volume utilization reaching 80%, this is a finding.'
 
-    desc 'fix', 'Configure the system to notify appropriate support staff immediately upon storage volume utilization reaching 80%.
+    desc 'fix', "Note: The following instructions use the PGDATA and PGVER environment variables. See 
+	supplementary content APPENDIX-F for instructions on configuring PGDATA and APPENDIX-H for PGVER.
 
-    PostgreSQL does not monitor storage, however, it is possible to monitor storage with a script.
+	Configure the system to notify appropriate support staff immediately upon storage volume utilization reaching 80 
+	percent.
 
-    ##### Example Monitoring Script
+	PostgreSQL does not monitor storage, however, it is possible to monitor storage with a script.
 
-    #!/bin/bash
+	##### Example Monitoring Script
 
-    PGDATA=/var/lib/psql/9.5/data
-    CURRENT=$(df ${PGDATA?} | grep / | awk "{ print $5}" | sed "s/%//g")
-    THRESHOLD=80
+	#!/bin/bash
 
-    if [ "$CURRENT" -gt "$THRESHOLD" ] ; then
-    mail -s "Disk Space Alert" mail@support.com << EOF
-    The data directory volume is almost full. Used: $CURRENT
-    %EOF
-    fi
+	PGDATA=/var/lib/psql/${PGVER?}/data
+	CURRENT=$(df ${PGDATA?} | grep / | awk '{ print $5}' | sed 's/%//g')
+	THRESHOLD=80
 
-    Schedule this script in cron to run around the clock.'
+	if [ \"$CURRENT\" -gt \"$THRESHOLD\" ] ; then
+	mail -s 'Disk Space Alert' mail@support.com << EOF
+	The data directory volume is almost full. Used: $CURRENT
+	%EOF
+	fi
+
+	Schedule this script in cron to run around the clock."
+    describe "Check system configuration for storage alerts." do
+		  skip "Review system configuration. If no script/tool is monitoring the partition for the PostgreSQL log directories, this is a finding."
+		  skip "If appropriate support staff are not notified immediately upon storage volume utilization reaching 80%, this is a finding"
+	  end
+    
+  end
+  
+  control 'V-233600' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not applied to this system categorization in CMS ARS 3.1'
   end
 
-  control 'V-73027' do
+  control 'V-233601' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not applied to this system categorization in CMS ARS 3.1'
     desc 'The CMS standard for authentication of an interactive user is the presentation of a Personal Identity Verification (PIV) Card or other physical token bearing a valid, current, CMS-issued Public Key Infrastructure (PKI) certificate, coupled with a Personal Identification Number (PIN) to be entered by the user at the beginning of each session and whenever reauthentication is required.
 
     Without reauthentication, users may access resources or perform tasks for which they do not have authorization.
@@ -160,7 +269,7 @@ include_controls 'pgstigcheck-inspec' do
     Within CMS, the minimum circumstances requiring reauthentication are privilege escalation and role changes.'
   end
 
-  control 'V-73029' do
+  control 'V-233602' do
     desc 'The CMS standard for authentication is CMS-approved PKI certificates. PKI certificate-based authentication is performed by requiring the certificate holder to cryptographically prove possession of the corresponding private key.
 
     If the private key is stolen, an attacker can use the private key(s) to impersonate the certificate holder. In cases where PostgreSQL-stored private keys are used to authenticate PostgreSQL to the system, clients, loss of the corresponding private keys would allow an attacker to successfully perform undetected man-in-the-middle attacks against PostgreSQL system and its clients.
@@ -170,7 +279,10 @@ include_controls 'pgstigcheck-inspec' do
     All access to the private key(s) of PostgreSQL must be restricted to authorized and authenticated users. If unauthorized users have access to one or more of PostgreSQL\'s private keys, an attacker could gain access to the key(s) and use them to impersonate the database on the network or otherwise perform unauthorized actions.'
   end
 
-  control 'V-73031' do
+  control 'V-233603' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
+    
     title 'PostgreSQL must only accept end entity certificates issued by CMS PKI or CMS-approved PKI Certification Authorities (CAs) for the establishment of all encrypted sessions.'
     
     desc 'Only CMS-approved external PKIs have been evaluated to ensure that they have security controls and identity vetting procedures in place which are sufficient for CMS systems to rely on the identity asserted in the certificate. PKIs lacking sufficient security controls and identity vetting procedures risk being compromised and issuing certificates that enable adversaries to impersonate legitimate users. 
@@ -189,23 +301,22 @@ include_controls 'pgstigcheck-inspec' do
     For more information on configuring PostgreSQL to use SSL, see supplementary content APPENDIX-G.'
   end
 
-  control 'V-73037' do
+  control 'V-233606' do
     impact 0.0
-    desc 'caveat', "Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1"
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
    end
 
-  control 'V-73045' do
+  control 'V-233610' do
     impact 0.0
-    desc 'caveat', "Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1"
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
   end
 
-  control 'V-73051' do
-    describe 'For this CMS ARS 3.1 overlay, this control must be reviewed manually' do 
-      skip 'For this CMS ARS 3.1 overlay, this control must be reviewed manually'
-    end
+  control 'V-233611' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control is not included in CMS ARS 3.1'
   end
 
-  control 'V-73055' do
+  control 'V-233615' do
     desc 'The CMS standard for authentication is CMS-approved PKI certificates. Once a PKI certificate has been validated, it must be mapped to PostgreSQL user account for the authenticated identity to be meaningful to PostgreSQL and useful for authorization decisions.'
   end
 
