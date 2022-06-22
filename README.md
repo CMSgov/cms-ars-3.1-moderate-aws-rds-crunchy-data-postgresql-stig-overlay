@@ -1,5 +1,5 @@
 # cms-ars-3.1-moderate-aws-rds-crunchy-data-postgresql-stig-overlay
-InSpec profile overlay to validate the secure configuration of AWS RDS hosted PostgreSQL Database, against [DISA](https://iase.disa.mil/stigs/)'s Crunchy Data PostgreSQL Security Technical Implementation Guide (STIG) Version 1, Release 1. (Applies to database versions 10, 11, 12 & 13) tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as Moderate.
+InSpec profile overlay to validate the secure configuration of AWS RDS hosted Crunchy Data PostgreSQL against [DISA](https://iase.disa.mil/stigs/)'s Crunchy Data PostgreSQL Security Technical Implementation Guide (STIG) Version 1, Release 1. (Applies to database versions 10, 11, 12 & 13) tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as Moderate.
 
 ## Getting Started
 ### InSpec (CINC-auditor) setup
