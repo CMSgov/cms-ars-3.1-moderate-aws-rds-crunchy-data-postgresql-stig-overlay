@@ -79,30 +79,31 @@ If you are using a *Windows* based inspec installation, please set the `windows_
 ### Example Inputs You Can Use
 
 ```
-# Windows or Linux Runner (default value = false)
+# Changes checks depending on if using a Windows or Linux-based InSpec Runner (default value = false)
 windows_runner: false
 
 
-
+# These five inputs are used by any tests needing to query the database:
 # Description: 'Postgres database admin user (e.g., 'postgres').'
-pg_dba: '<master user, e.g., postgres>'
+pg_dba: 'postgres'
 
-# Description: 'Postgres database admin password (e.g., 'tesT$4329uyskdj!kjh').'
-pg_dba_password: '<password>'
+# Description: 'Postgres database admin password.'
+pg_dba_password: ''
 
 # Description: 'Postgres database hostname'
-pg_host: '<endpoint>.amazonaws.com'
+pg_host: ''
 
 # Description: 'Postgres database name (e.g., 'postgres')'
-pg_db: '<database name>'
+pg_db: 'postgres'
 
-# Description: 'Postgres database port'
+# Description: 'Postgres database port (e.g., '5432')
 pg_port: '5432'
+
 
 # Description: 'Postgres users e.g., ["pg_signal_backend", "postgres", "rds_iam", "rds_pgaudit", "rds_replication", "rds_superuser", "rdsadmin", "rdsrepladmin"]'
 pg_users: ["pg_signal_backend", "postgres", "rds_iam", "rds_pgaudit", "rds_replication", "rds_superuser", "rdsadmin", "rdsrepladmin"]
 
-# Description: 'V-73007, V-7300uses this list of approved database extensions'
+# Description: 'V-233592, V-233593 use this list of approved database extensions (e.g., ['plpgsql']).'
 approved_ext: ["pgaudit"]
 
 # Description: 'V-73011 uses this list of approved postgres-related packages (e.g., postgresql-server.x86_64, postgresql-odbc.x86_64)'
@@ -126,19 +127,20 @@ login_user: ''
 # Description: 'Database host ip'
 login_host: ''
 
-# Description: 'Database version' (default 9.5)
-pg_version: '9.5'
+# Description: 'Database version'
+# Change "12.x" to your version (This STIG applies to versions 10.x, 11.x, 12.x, and 13.x)
+pg_version: '12.9'
 
 # Description: 'Postgres ssl setting (e.g., 'on').'
-pg_ssl: ''
+pg_ssl: 'on'
 
 # Description: 'Postgres audit log items (e.g., ['ddl','role','read','write']).'
-pgaudit_log_items: []
+pgaudit_log_items: ['ddl','role','read','write']
 
 # Description: 'Postgres audit log line items (e.g. ['%m','%u','%c']).'
-pgaudit_log_line_items: []
+pgaudit_log_line_items: ['%m','%u','%c']
 
-# Description: 'Postgres replicas (e.g. ['192.168.1.3/32']).'
+# Description: 'V-233520, V-233612 use this list of Postgres replicas from pg_hba.conf settings (e.g. ['127.0.0.1/32']).'
 pg_replicas: []
 
 # Description: 'Postgres max number of connections allowed (e.g., 100).'
@@ -188,7 +190,7 @@ cinc-auditor exec <name of generated archive> --input-file <path_to_your_input_f
 
 The JSON results output file can be loaded into __[heimdall-lite](https://heimdall-lite.mitre.org/)__ for a user-interactive, graphical view of the InSpec results. 
 
-The JSON InSpec results file may also be loaded into a __[full heimdall server](https://github.com/mitre/heimdall)__, allowing for additional functionality such as to store and compare multiple profile runs.
+The JSON InSpec results file may also be loaded into a __[full heimdall server](https://github.com/mitre/heimdall2)__, allowing for additional functionality such as to store and compare multiple profile runs.
 
 ## Authors
 * Eugene Aronne - [ejaronne](https://github.com/ejaronne)
@@ -203,7 +205,7 @@ To report a bug or feature request, please open an [issue](https://github.com/CM
 
 ### NOTICE
 
-© 2018-2020 The MITRE Corporation.
+© 2018-2022 The MITRE Corporation.
 
 Approved for Public Release; Distribution Unlimited. Case Number 18-3678.
 
